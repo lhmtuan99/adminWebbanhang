@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2787982-87A2-4C76-BBA6-97329A842F55}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AdminBanHang</RootNamespace>
+    <AssemblyName>AdminBanHang</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\ComboBLL.cs" />
+    <Compile Include="BLL\CustomerBLL.cs" />
+    <Compile Include="BLL\EmployeeBLL.cs" />
+    <Compile Include="BLL\InvoiceBLL.cs" />
+    <Compile Include="BLL\LapDonHangBLL.cs" />
+    <Compile Include="BLL\ProductBLL.cs" />
+    <Compile Include="BLL\ThongkeBLL.cs" />
+    <Compile Include="DAL\ComboDAL.cs" />
+    <Compile Include="DAL\CustomerDAL.cs" />
+    <Compile Include="DAL\DBConnection.cs" />
+    <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\InvoiceDAL.cs" />
+    <Compile Include="DAL\LapDonHangDAL.cs" />
+    <Compile Include="DAL\ProductDAL.cs" />
+    <Compile Include="DAL\ThongkeDAL.cs" />
+    <Compile Include="DTO\Company.cs" />
+    <Compile Include="DTO\Combo.cs" />
+    <Compile Include="DTO\ComboProduct.cs" />
+    <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\Employee.cs" />
+    <Compile Include="DTO\Invoice.cs" />
+    <Compile Include="GUI\DialogChangeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogChangeStatus.Designer.cs">
+      <DependentUpon>DialogChangeStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\InfoCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\InfoCustomerForm.Designer.cs">
+      <DependentUpon>InfoCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LapDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LapDonHang.Designer.cs">
+      <DependentUpon>LapDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OldCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\OldCustomer.Designer.cs">
+      <DependentUpon>OldCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanlyHoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanlyHoadon.Designer.cs">
+      <DependentUpon>QuanlyHoadon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Product.cs" />
+    <Compile Include="DTO\Types.cs" />
+    <Compile Include="GUI\ChooseProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChooseProduct.Designer.cs">
+      <DependentUpon>ChooseProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanlyCombo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanlyCombo.Designer.cs">
+      <DependentUpon>QuanlyCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyKhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyKhachhang.Designer.cs">
+      <DependentUpon>QuanLyKhachhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyNhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyNhanvien.Designer.cs">
+      <DependentUpon>QuanLyNhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanlyProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanlyProduct.Designer.cs">
+      <DependentUpon>QuanlyProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThongKeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThongKeForm.Designer.cs">
+      <DependentUpon>ThongKeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\ChooseProduct.resx">
+      <DependentUpon>ChooseProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogChangeStatus.resx">
+      <DependentUpon>DialogChangeStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\InfoCustomerForm.resx">
+      <DependentUpon>InfoCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LapDonHang.resx">
+      <DependentUpon>LapDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OldCustomer.resx">
+      <DependentUpon>OldCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanlyCombo.resx">
+      <DependentUpon>QuanlyCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanlyHoadon.resx">
+      <DependentUpon>QuanlyHoadon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyKhachhang.resx">
+      <DependentUpon>QuanLyKhachhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyNhanvien.resx">
+      <DependentUpon>QuanLyNhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanlyProduct.resx">
+      <DependentUpon>QuanlyProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThongKeForm.resx">
+      <DependentUpon>ThongKeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock-photo-173343119.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\131021664_1285359275314387_521618797684494564_n.jpg" />
+    <Content Include="Resources\BoThuPhatBluetoothchooto.jpg" />
+    <Content Include="Resources\CameraHongNgoai.jpg" />
+    <Content Include="Resources\CameraOV7670+FIFOAL422.jpg" />
+    <Content Include="Resources\CameraOV7670NoFiFo.jpg" />
+    <Content Include="Resources\DauphatLaser.jpg" />
+    <Content Include="Resources\Machdieukhienbeptu.jpg" />
+    <Content Include="Resources\Machdieukhienpinmattroi.jpg" />
+    <Content Include="Resources\ModuleBluetooth4.0.jpg" />
+    <Content Include="Resources\ModuleBluetooth5.0.jpg" />
+    <Content Include="Resources\ModuleBluetoothAmThanh.jpg" />
+    <Content Include="Resources\product1.jpg" />
+    <Content Include="Resources\product2.jpg" />
+    <Content Include="Resources\product3.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
